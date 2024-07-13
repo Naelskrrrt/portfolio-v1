@@ -88,6 +88,14 @@
   }
 }
 
+/* Text reset */
+p, h1, h2, h3, h4, h5, h6, ul, ol, li, span {
+  margin: 0;
+  padding: 0;
+  cursor: default;
+}
+
+
 /* TEXT ROTATOR ANIMATION */
 .animate-text-slide {
   animation: text-slide 12.5s cubic-bezier(0.83, 0, 0.17, 1) infinite;
@@ -122,4 +130,8 @@
   100% {
     transform: translateY(-83.33%);
   }
+}
+
+.invert-colors {
+  filter: invert(100%);
 }

@@ -32,6 +32,7 @@ export const TextGenerateEffect = ({
 					return (
 						<motion.span
 							key={word + idx}
+							data-sticky
 							className={`${
 								idx > 8
 									? "text-purple "

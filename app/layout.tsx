@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
+import StickyCursor from "@/components/ui/StickyCursor";
+import clsx from "clsx";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +20,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
+			<body className={clsx(inter.className)}>
 				{" "}
+				<StickyCursor />
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="dark"
