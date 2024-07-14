@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const words = ["developer", "designer", "creator", "innovator"];
@@ -10,15 +10,7 @@ const Typewriter = () => {
 	const [loopNum, setLoopNum] = useState(0);
 	const [typingSpeed, setTypingSpeed] = useState(200);
 
-	useEffect(() => {
-		let typewriterEffect = setTimeout(() => {
-			handleTyping();
-		}, typingSpeed);
-
-		return () => clearTimeout(typewriterEffect);
-	}, [displayedText, isDeleting]);
-
-	const handleTyping = () => {
+	const handleTyping = useCallback(() => {
 		const fullText = `${words[index]}`;
 		setDisplayedText(
 			isDeleting
@@ -35,8 +27,15 @@ const Typewriter = () => {
 			setLoopNum(loopNum + 1);
 			setTypingSpeed(200);
 		}
-	};
+	}, [index, displayedText, isDeleting, loopNum]);
 
+	useEffect(() => {
+		let typewriterEffect = setTimeout(() => {
+			handleTyping();
+		}, typingSpeed);
+
+		return () => clearTimeout(typewriterEffect);
+	}, [handleTyping, typingSpeed]);
 	return (
 		<div className=" text-white ">
 			<p className="md:tracking-wider mb-4 text-md md-text-lg lg:text-2xl">

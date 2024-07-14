@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Syne, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 import StickyCursor from "@/components/ui/StickyCursor";
 import clsx from "clsx";
 
 const inter = Inter({ subsets: ["latin"] });
+const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "Lalason Annael - Portfolio",
@@ -20,7 +21,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={clsx(inter.className)}>
+			<body className={clsx(dmSans.className)}>
 				{" "}
 				<StickyCursor />
 				<ThemeProvider

@@ -1,33 +1,18 @@
 "use client";
 
+import clsx from "clsx";
+import { DM_Sans } from "next/font/google";
 import { forwardRef, useRef, useState } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationArrow } from "react-icons/fa6";
+import { FlipWords } from "./ui/FlipWord";
 import MagicButton from "./ui/MagicButton";
 import Badge from "./ui/OnlineBadge";
 import { Spotlight } from "./ui/Spotlight";
-import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-import TextRotator from "./ui/TextRotator";
+import { TextGenerateEffect } from "./ui/TextGenerateEffect/TextGenerateEffect";
 import TextInfiniteScrolling from "./ui/TextInfinite";
 
-const words = [
-	{
-		text: "Build",
-	},
-	{
-		text: "awesome",
-	},
-	{
-		text: "apps",
-	},
-	{
-		text: "with",
-	},
-	{
-		text: "Aceternity.",
-		className: "text-blue-500 dark:text-blue-500",
-	},
-];
+const dmSans = DM_Sans({ subsets: ["latin"] });
 
 // eslint-disable-next-line react/display-name
 const Hero = forwardRef<HTMLParagraphElement, {}>((props, ref) => {
@@ -55,17 +40,28 @@ const Hero = forwardRef<HTMLParagraphElement, {}>((props, ref) => {
 			</div>
 			<div className="flex justify-center relative my-20">
 				<div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center">
-					<h2 className="uppercase tracking-widest text-[10px] text-center text-blue-100 max-w-96 cursor-default">
+					<Badge className="opacity-100 font-bold relative -top-10" />
+
+					<h2 className="uppercase tracking-widest text-xs font-bold md:text-md text-center text-blue-100 w-full cursor-default">
 						lalason anna&euml;l Horthannice, Software Developer
 					</h2>
 					<TextGenerateEffect
-						className="text-center text-[40px] md:text-5xl lg:text-6xl cursor-default"
+						className="text-center text-[40px] md:text-5xl lg:text-9xl cursor-default"
 						words="Bringing your projects to life with intuitive design and quality development."
 					/>
-					<div className="">
-						<TextRotator />
+					<div
+						className={
+							(clsx(dmSans.className),
+							"text-lg align-center gap-2 mt-2 justify md:text-2xl align-text-top")
+						}>
+						{/* <TextRotator /> */}
+						Hi! I am a Creative
+						<FlipWords
+							className="text-pink-800"
+							words={["Developer", "Designer", "Thinker"]}
+						/>
 					</div>
-					<div className="flex gap-3 md:gap-6">
+					<div className="flex gap-3 md:gap-6 py-2">
 						<MagicButton
 							title="Show My Work"
 							icon={<FaLocationArrow />}
@@ -77,7 +73,6 @@ const Hero = forwardRef<HTMLParagraphElement, {}>((props, ref) => {
 							position="right"
 						/>
 					</div>
-					<Badge className="absolute -top-2 opacity-0 right-60  xl:opacity-100 font-bold" />
 				</div>
 			</div>
 			<TextInfiniteScrolling />

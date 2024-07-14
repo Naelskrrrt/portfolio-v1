@@ -7,43 +7,52 @@ import styles from "./style.module.css";
 const TextInfiniteScrolling = () => {
 	const firstText = useRef(null);
 	const secondText = useRef(null);
-
 	const slider = useRef(null);
-	let xPercent = 0;
-	let direction = -1;
 
 	useLayoutEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
-		gsap.to(slider.current, {
-			scrollTrigger: {
-				trigger: document.documentElement,
-				scrub: 0.25,
-				start: 0,
-				end: window.innerHeight,
-				onUpdate: (e) => (direction = e.direction * -1),
-			},
-			x: "-500px",
-		});
-		requestAnimationFrame(animate);
-	}, []);
 
-	const animate = () => {
-		if (xPercent < -100) {
-			xPercent = 0;
-		} else if (xPercent > 0) {
-			xPercent = -100;
-		}
-		gsap.set(firstText.current, { xPercent: xPercent });
-		gsap.set(secondText.current, { xPercent: xPercent });
-		requestAnimationFrame(animate);
-		xPercent += 0.1 * direction;
-	};
+		gsap.to(slider.current, {
+			xPercent: -100,
+			ease: "none",
+			duration: 20, // Augmenter la vitesse en réduisant la durée
+			repeat: -1,
+			modifiers: {
+				xPercent: gsap.utils.wrap(-100, 0),
+			},
+		});
+
+		ScrollTrigger.create({
+			trigger: document.documentElement,
+			start: "top top",
+			end: "bottom bottom",
+			scrub: true,
+			onUpdate: (self) => {
+				gsap.to(slider.current, {
+					xPercent: -100 * self.progress,
+					ease: "none",
+					duration: 10, // Augmenter la vitesse en réduisant la durée
+					repeat: -1,
+					modifiers: {
+						xPercent: gsap.utils.wrap(-100, 0),
+					},
+				});
+			},
+		});
+	}, []);
 
 	return (
 		<div className={styles.sliderContainer}>
 			<div ref={slider} className={styles.slider}>
-				<p ref={firstText}> Creative Developer -</p>
-				<p ref={secondText}> Creative Designer -</p>
+				<p ref={firstText} className={styles.text}>
+					{" "}
+					Creative Designer - Creative Developer - Creative Thinker -
+					Creative Designer - Creative Developer
+				</p>
+				<p ref={secondText} className={styles.text}>
+					{" "}
+					Creative Designer - Creative Developer
+				</p>
 			</div>
 		</div>
 	);
