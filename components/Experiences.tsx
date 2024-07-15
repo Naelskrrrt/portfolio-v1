@@ -2,6 +2,7 @@ import React from "react";
 
 import { WORK_EXPERIENCES } from "@/data";
 import { Button } from "./ui/MovingBorder";
+import Image from "next/image";
 // import { Button } from "./ui/MagicButton";
 
 const Experience = () => {
@@ -31,11 +32,6 @@ const Experience = () => {
 						// remove bg-white dark:bg-slate-900
 						className="flex-1 text-black dark:text-white border-neutral-200 dark:border-slate-800">
 						<div className="flex flex-col  lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-11">
-							<img
-								src={card.thumbnail}
-								alt={card.thumbnail}
-								className="lg:w-56 md:w-32 w-20"
-							/>
 							<div className="lg:ms-5">
 								<h1 className="text-start text-xl md:text-2xl font-bold">
 									{card.title}

@@ -9,6 +9,7 @@ import {
 import { cn } from "@/utils/cn";
 import Link from "next/link";
 import { LuDownload } from "react-icons/lu";
+import Image from "next/image";
 
 export const FloatingNav = ({
 	navItems,
@@ -84,7 +85,7 @@ export const FloatingNav = ({
 								"relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
 							)}>
 							<span className="block sm:hidden">
-								<img
+								<Image
 									src={navItem.icon}
 									alt="icons"
 									width={20}
@@ -92,7 +93,7 @@ export const FloatingNav = ({
 								/>
 							</span>
 							<span className="hidden sm:flex gap-2 items-center justify-center cursor-pointer text-md">
-								<img
+								<Image
 									src={navItem.icon}
 									alt="icons"
 									width={20}

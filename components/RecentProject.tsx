@@ -4,6 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { PinContainer } from "./ui/3dpin";
 import { FaLocationArrow } from "react-icons/fa";
+import Image from "next/image";
 
 const RecentProject = () => {
 	const controls = useAnimation();
@@ -46,13 +47,19 @@ const RecentProject = () => {
 							<PinContainer title={link} href={link}>
 								<div className="relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
 									<div className="relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]">
-										<img src="/bg.png" alt="bg-img" />
+										<Image
+											src="/bg.png"
+											alt="bg-img"
+											fill={true}
+										/>
 									</div>
-									<img
+									<Image
 										src={img}
 										alt={title}
 										className="z-10 absolute bottom-0"
-										style={{ objectFit: "contain" }}
+										// style={{ objectFit: "contain" }}
+										fill={true}
+										objectFit="contain"
 									/>
 								</div>
 								<h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
@@ -72,10 +79,11 @@ const RecentProject = () => {
 														5 * index * 2
 													}px)`,
 												}}>
-												<img
+												<Image
 													src={icon}
 													alt="icon"
 													className="p-2"
+													fill={true}
 												/>
 											</div>
 										))}

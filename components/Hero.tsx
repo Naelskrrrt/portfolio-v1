@@ -79,7 +79,7 @@ const Hero = forwardRef<HTMLParagraphElement, {}>((props, ref) => {
 					</div>
 				</div>
 			</div>
-			<TextInfiniteScrolling />
+			{/* <TextInfiniteScrolling /> */}
 		</div>
 	);
 });

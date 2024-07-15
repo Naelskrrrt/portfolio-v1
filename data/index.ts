@@ -146,7 +146,7 @@ export const PROJECTS = [
 		id: 1,
 		title: "Travlog - Combine Travel Blog with Social Media",
 		des: "A design and website project that combines a travel blog with a social media platform.",
-		img: "/p1.jpg",
+		img: "/p1.png",
 		iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
 		link: "https://travlog-website.vercel.app/",
 		designLink:
@@ -156,7 +156,7 @@ export const PROJECTS = [
 		id: 2,
 		title: "Interior Design",
 		des: "A landing page design for an interior design company.",
-		img: "/p2.jpg",
+		img: "/p2.png",
 		iconLists: [
 			// "/next.svg",
 			// "/tail.svg",
@@ -172,7 +172,7 @@ export const PROJECTS = [
 		id: 3,
 		title: "Wallet - Finance Tracker",
 		des: "Mobile Design with figma, and a finance tracker app using React Native and Expo, For an entreprise.",
-		img: "/p3.jpg",
+		img: "/p3.png",
 		iconLists: [
 			"/re.svg",
 			"/tail.svg",
@@ -186,7 +186,7 @@ export const PROJECTS = [
 		id: 4,
 		title: "E-leave - Leave Management System",
 		des: "A leave management system for an entreprise, with a web and mobile app.",
-		img: "/p4.jpg",
+		img: "/p4.png",
 		iconLists: [
 			"/next.svg",
 			// "/tail.svg",
@@ -204,7 +204,7 @@ export const PROJECTS = [
 		id: 5,
 		title: "This Portfolio",
 		des: "A showcase of my work, built with Next.js, Tailwind CSS, shadcn/ui, Three.js, gsap and TypeScript.",
-		img: "/p5.jpg",
+		img: "/p5.png",
 		iconLists: [
 			"/next.svg",
 			"/tail.svg",
@@ -214,18 +214,4 @@ export const PROJECTS = [
 		],
 		link: "https://github.com/Naelskrrrt/portfolio-v1.git",
 	},
-	// {
-	// 	id: 6,
-	// 	title: "Fast API",
-	// 	des: "High-performance API using Next.js, Hono, Redis and Cloudflare Workers.",
-	// 	img: "/p4.svg",
-	// 	iconLists: [
-	// 		"/next.svg",
-	// 		"/tail.svg",
-	// 		"/hono.svg",
-	// 		"/redis.svg",
-	// 		"/cloudflare.svg",
-	// 	],
-	// 	link: "https://github.com/Naelskrrrt/fast-api",
-	// },
 ];
