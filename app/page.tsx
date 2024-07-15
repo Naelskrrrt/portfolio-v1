@@ -1,43 +1,48 @@
 "use client";
+import Approach from "@/components/Approach";
 import Experiences from "@/components/Experiences";
+import Footer from "@/components/Footer";
 import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
 import RecentProject from "@/components/RecentProject";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
+import { navItems } from "@/data";
+import { AnimatePresence } from "framer-motion";
+import Preloader from "../components/ui/Preloader";
 
-import { useRef } from "react";
-import {
-	LuBriefcase,
-	LuFolderGit2,
-	LuHelpCircle,
-	LuPhone,
-} from "react-icons/lu";
+import { useEffect, useRef, useState } from "react";
 
 // Définir le type pour les éléments de navigation
-type NavItem = {
-	name: string;
-	link: string;
-	icon: JSX.Element;
-};
-
-export const NAV_ITEMS: NavItem[] = [
-	{ name: "About", link: "#about", icon: <LuHelpCircle /> },
-	{ name: "Projects", link: "#projects", icon: <LuFolderGit2 /> },
-	{ name: "Experiences", link: "#experiences", icon: <LuBriefcase /> },
-	{ name: "Contact", link: "#contact", icon: <LuPhone /> },
-];
 
 export default function Home() {
-	const stickyElement = useRef(null);
+	const [isLoading, setIsLoading] = useState(true);
+	useEffect(() => {
+		(async () => {
+			const LocomotiveScroll = (await import("locomotive-scroll"))
+				.default;
+			const locomotiveScroll = new LocomotiveScroll();
+
+			setTimeout(() => {
+				setIsLoading(false);
+				document.body.style.cursor = "default";
+				window.scrollTo(0, 0);
+			}, 2000);
+		})();
+	}, []);
 
 	return (
 		<main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
+			<AnimatePresence mode="wait">
+				{isLoading && <Preloader />}
+			</AnimatePresence>
 			<div className="max-w-7xl w-full">
-				<FloatingNav navItems={NAV_ITEMS} />
-				<Hero ref={stickyElement} />
+				<FloatingNav navItems={navItems} />
+				<Hero />
 				<Grid />
 				<RecentProject />
 				<Experiences />
+				<Approach />
+				<Footer />
 			</div>
 		</main>
 	);

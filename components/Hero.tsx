@@ -62,16 +62,20 @@ const Hero = forwardRef<HTMLParagraphElement, {}>((props, ref) => {
 						/>
 					</div>
 					<div className="flex gap-3 md:gap-6 py-2">
-						<MagicButton
-							title="Show My Work"
-							icon={<FaLocationArrow />}
-							position="right"
-						/>
-						<MagicButton
-							title="Contact Me"
-							icon={<FaPhoneAlt />}
-							position="right"
-						/>
+						<a href="#projects" className="cursor-pointer">
+							<MagicButton
+								title="Show My Work"
+								icon={<FaLocationArrow />}
+								position="right"
+							/>
+						</a>
+						<a href="#contact" className="cursor-pointer">
+							<MagicButton
+								title="Contact Me"
+								icon={<FaPhoneAlt />}
+								position="right"
+							/>
+						</a>
 					</div>
 				</div>
 			</div>

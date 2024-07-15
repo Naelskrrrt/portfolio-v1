@@ -25,7 +25,7 @@ const RecentProject = () => {
 	}, [controls, inView]);
 
 	return (
-		<div className="py-20" id="project">
+		<div className="py-20" id="projects">
 			<h1 data-sticky className="heading">
 				A small selection of
 				<span className="text-purple"> recent projects</span>

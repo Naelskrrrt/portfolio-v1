@@ -17,7 +17,7 @@ export const FloatingNav = ({
 	navItems: {
 		name: string;
 		link: string;
-		icon?: JSX.Element;
+		icon?: string;
 	}[];
 	className?: string;
 }) => {
@@ -41,6 +41,16 @@ export const FloatingNav = ({
 			setLastScrollY(current);
 		}
 	});
+	const handleDownload = () => {
+		const link = document.createElement("a");
+		link.href = "/resume.pdf"; // Remplace par le chemin correct vers ton fichier
+		link.download = "resume.pdf"; // Nom du fichier téléchargé
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+	};
+
+	// Made with <3 Copyright (c) 2024 by LALASON Annael
 
 	return (
 		<AnimatePresence>
@@ -74,15 +84,26 @@ export const FloatingNav = ({
 								"relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
 							)}>
 							<span className="block sm:hidden">
-								{navItem.icon}
+								<img
+									src={navItem.icon}
+									alt="icons"
+									width={20}
+									height={20}
+								/>
 							</span>
 							<span className="hidden sm:flex gap-2 items-center justify-center cursor-pointer text-md">
-								{navItem.icon}
+								<img
+									src={navItem.icon}
+									alt="icons"
+									width={20}
+									height={20}
+								/>
 								{navItem.name}
 							</span>
 						</Link>
 					))}
 					<button
+						onClick={handleDownload}
 						data-sticky
 						className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white ml-1 px-4 py-2 rounded-xl flex items-center gap-2">
 						<LuDownload />

@@ -1,3 +1,11 @@
+export const navItems = [
+	{ name: "Home", link: "#", icon: "/home.svg" },
+	{ name: "About", link: "#about", icon: "/info.svg" },
+	{ name: "Projects", link: "#projects", icon: "/monitor.svg" },
+	{ name: "Experiences", link: "#experience", icon: "/briefcase.svg" },
+	{ name: "Contact", link: "#contact", icon: "/phone.svg" },
+];
+
 export const socialMedia = [
 	{
 		id: 1,
@@ -6,7 +14,7 @@ export const socialMedia = [
 	},
 	{
 		id: 2,
-		img: "/email.svg",
+		img: "/mail.svg",
 		url: "mailto:ralalanael@gmail.com",
 	},
 	{
@@ -14,37 +22,59 @@ export const socialMedia = [
 		img: "/link.svg",
 		url: "https://www.linkedin.com/in/lalasonnael/",
 	},
+	{
+		id: 4,
+		img: "/whatsapp.svg",
+		url: "https://wa.me/+261320570760",
+	},
 ];
 
 export const WORK_EXPERIENCES = [
 	{
 		id: 1,
-		title: "Frontend Engineer Intern",
-		desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+		title: "Apprentice in Web and Mobile Design and Integration",
+		desc: [
+			"Modeling and wireframing for websites and mobile applications.",
+			"Creation of intuitive and attractive user interfaces (UI).",
+			"Use of tools such as Adobe XD, Sketch, or Figma.",
+			"Converting mockups to ReactJS and JavaScript code.",
+			"Optimization for a responsive user experience.",
+			"Mastery of frameworks.",
+			"Experience with modern frameworks such as React.",
+			"Implementing interactive features with JavaScript.",
+			"Using development and debugging tools like Chrome DevTools.",
+		],
 		className: "md:col-span-2",
-		thumbnail: "/exp1.svg",
+		thumbnail: "/abm-logo.svg",
 	},
+
 	{
 		id: 2,
-		title: "Mobile App Dev - JSM Tech",
-		desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
+		title: "Web Developer Intern",
+		desc: [
+			"Conception et Implémentation d'une Application de Gestion des Congés pour les Employés de l'Entreprise",
+			"Expérience dans le développement complet d'une application complète de gestion des congés conçue pour les employés de l'entreprise.",
+			"J'ai mis en œuvre des interfaces conviviales, respectant les normes de sécurité les plus élevées.",
+			"Implémentation de fonctionnalités complexes dans une application de gestion des congés : Intégration de la synchronisation de calendrier, Gestion des congés basée sur l'accréditation, ...",
+			"Technologies et Outils : ReactJS, NodeJs, ExpressJS, MySQL, Figma, MERISE, Git/Github, Notion, Gestion des ressources humaines",
+		],
 		className: "md:col-span-2", // change to md:col-span-2
-		thumbnail: "/exp2.svg",
+		thumbnail: "/spat.png",
 	},
-	{
-		id: 3,
-		title: "Freelance App Dev Project",
-		desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-		className: "md:col-span-2", // change to md:col-span-2
-		thumbnail: "/exp3.svg",
-	},
-	{
-		id: 4,
-		title: "Lead Frontend Developer",
-		desc: "Developed and maintained user-facing features using modern frontend technologies.",
-		className: "md:col-span-2",
-		thumbnail: "/exp4.svg",
-	},
+	// {
+	// 	id: 3,
+	// 	title: "Freelance App Dev Project",
+	// 	desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
+	// 	className: "md:col-span-2", // change to md:col-span-2
+	// 	thumbnail: "/exp3.svg",
+	// },
+	// {
+	// 	id: 4,
+	// 	title: "Lead Frontend Developer",
+	// 	desc: "Developed and maintained user-facing features using modern frontend technologies.",
+	// 	className: "md:col-span-2",
+	// 	thumbnail: "/exp4.svg",
+	// },
 ];
 
 export const GRID_ITEMS = [
